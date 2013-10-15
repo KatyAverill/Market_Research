@@ -1,6 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
 <link href="stylesheets/styles.css" rel="stylesheet" />
+</head>
+<body>
 <?php
-echo "<html><body><table>\n\n";
+echo "<table>\n\n";
 $f = fopen("market_research.csv", "r");
 while (($line = fgetcsv($f)) !== false) {
         echo "<tr>";
