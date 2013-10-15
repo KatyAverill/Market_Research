@@ -10,7 +10,10 @@ $f = fopen("market_research.csv", "r");
 while (($line = fgetcsv($f)) !== false) {
         echo "<tr>";
         foreach ($line as $cell) {
-                echo "<td>" . htmlspecialchars($cell) . "</td>";
+        	if (substr($cell, 0,4) == "http") {
+        		echo "<td>" ."<a href='" . $cell . "'>Go!</a>";
+        	} else
+                echo "<td>" . htmlspecialchars($cell);
         }
         echo "<tr>\n";
 }
